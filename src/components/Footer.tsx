@@ -39,7 +39,7 @@ export function Footer() {
 
           <a
             href="#top"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-primary"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-primary w-fit"
           >
             Back to top
             <span className="text-lg">↑</span>

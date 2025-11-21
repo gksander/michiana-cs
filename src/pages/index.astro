@@ -1,8 +1,11 @@
 ---
 import "../styles/global.css";
-import { HeroAndServices } from "@/components/HeroAndServices";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/components/HeroSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { WhyUsSection } from "@/components/WhyUsSection";
 import { BUSINESS_NAME } from "@/lib/consts";
 ---
 
@@ -16,8 +19,26 @@ import { BUSINESS_NAME } from "@/lib/consts";
     <title>{BUSINESS_NAME}</title>
   </head>
   <body id="top">
-    <HeroAndServices />
-    <ContactSection />
+    <main class="min-h-screen bg-background text-foreground">
+      <div class="pointer-events-none absolute inset-0 opacity-50">
+        <div
+          class="absolute -left-32 top-12 h-64 w-64 rounded-[40%] bg-primary/30 blur-[120px]"
+        >
+        </div>
+        <div
+          class="absolute right-0 top-0 h-72 w-72 rounded-[45%] bg-accent/30 blur-[120px]"
+        >
+        </div>
+      </div>
+
+      <Header />
+
+      <HeroSection />
+      <WhyUsSection />
+      <ServicesSection />
+      <ContactSection />
+    </main>
+
     <Footer />
   </body>
 </html>
