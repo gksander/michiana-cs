@@ -9,26 +9,26 @@ export function Header() {
   return (
     <header className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
       <div className="flex items-center gap-2">
-        <div className="flex size-12 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-500 to-emerald-400 text-white font-semibold">
+        <div className="flex size-12 items-center justify-center rounded-2xl bg-linear-to-br from-primary to-accent text-primary-foreground font-semibold">
           MCS
         </div>
         <div>
-          <p className="text-lg font-semibold text-slate-900">
+          <p className="text-lg font-semibold text-foreground">
             {BUSINESS_NAME}
           </p>
-          <p className="text-xs tracking-[0.2em] text-slate-500">
+          <p className="text-xs tracking-[0.2em] text-muted-foreground">
             Commercial care across the Michiana region
           </p>
         </div>
       </div>
 
       <div className="mt-2 flex items-center gap-6 md:mt-0">
-        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium text-muted-foreground md:flex">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="transition-colors hover:text-slate-900"
+              className="transition-colors hover:text-foreground"
             >
               {link.label}
             </a>
@@ -37,7 +37,7 @@ export function Header() {
 
         <a
           href={`#${SECTION_IDS.CONTACT}`}
-          className="rounded-full bg-linear-to-r from-indigo-600 to-emerald-400 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+          className="rounded-full bg-linear-to-r from-primary to-accent px-5 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:shadow-primary/50"
         >
           Get a free quote
         </a>
