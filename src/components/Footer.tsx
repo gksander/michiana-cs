@@ -1,3 +1,5 @@
+import { BUSINESS_NAME } from "@/lib/consts";
+
 const footerLinks = [
   { label: "Why choose us?", href: "#why-us" },
   { label: "Services", href: "#services" },
@@ -15,7 +17,7 @@ export function Footer() {
             </div>
             <div>
               <p className="text-xl font-semibold text-slate-900">
-                Michiana Commercial Services
+                {BUSINESS_NAME}
               </p>
               <p className="text-sm text-slate-500">
                 Commercial care across the Michiana region

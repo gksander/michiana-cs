@@ -3,3 +3,5 @@ export const SECTION_IDS = {
   SERVICES: "services",
   CONTACT: "contact",
 };
+
+export const BUSINESS_NAME = "Michiana Group";

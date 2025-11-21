@@ -1,4 +1,4 @@
-import { SECTION_IDS } from "@/lib/consts";
+import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
 
 const navLinks = [
   { label: "Why choose us?", href: `#${SECTION_IDS.WHY_CHOOSE_US}` },
@@ -14,7 +14,7 @@ export function Header() {
         </div>
         <div>
           <p className="text-lg font-semibold text-slate-900">
-            Michiana Commercial Services
+            {BUSINESS_NAME}
           </p>
           <p className="text-xs tracking-[0.2em] text-slate-500">
             Commercial care across the Michiana region

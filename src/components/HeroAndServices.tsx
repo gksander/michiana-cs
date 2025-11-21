@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header";
-import { SECTION_IDS } from "@/lib/consts";
+import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
 
 const heroHighlights = [
   "Tailored maintenance plans",
@@ -108,7 +108,7 @@ export function HeroAndServices() {
         <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 lg:flex-row lg:items-center">
           <div className="flex-1 space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">
-              Why choose Michiana Commercial Services?
+              {`Why choose ${BUSINESS_NAME}?`}
             </p>
             <h2 className="text-3xl font-bold leading-tight md:text-4xl">
               Partner with a trusted local cleaning company delivering premium
