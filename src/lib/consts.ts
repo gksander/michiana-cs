@@ -5,3 +5,5 @@ export const SECTION_IDS = {
 };
 
 export const BUSINESS_NAME = "Michiana Group";
+
+export const CONTACT_EMAIL = "robertdudzik6@gmail.com";

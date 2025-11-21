@@ -1,11 +1,6 @@
 import { Header } from "@/components/Header";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
-
-const heroHighlights = [
-  "Tailored maintenance plans",
-  "Premium equipment & eco products",
-  "Fully insured & vetted pros",
-];
 
 const reasons = [
   "No lock-in contracts",
@@ -71,17 +66,6 @@ export function HeroAndServices() {
                 Get a free quote
               </a>
             </div>
-
-            <div className="grid gap-3 md:grid-cols-3">
-              {heroHighlights.map((highlight) => (
-                <div
-                  key={highlight}
-                  className="rounded-2xl border border-border bg-card/80 px-4 py-3 text-sm font-semibold text-foreground"
-                >
-                  {highlight}
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="relative">
@@ -130,7 +114,7 @@ export function HeroAndServices() {
             {reasons.map((reason) => (
               <div
                 key={reason}
-                className="rounded-3xl border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-4 text-sm font-semibold backdrop-blur"
+                className="rounded-xl border border-primary-foreground/20 bg-card/95 text-card-foreground px-5 py-4 text-sm font-semibold backdrop-blur"
               >
                 <span className="mr-2 text-accent">●</span>
                 {reason}
@@ -178,7 +162,7 @@ export function HeroAndServices() {
         </div>
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[32px] bg-card p-8 shadow-[0_35px_65px_rgba(65,80,140,0.15)]">
+          <div className="rounded-[32px] bg-card/60 text-card-foreground p-8 shadow-[0_35px_65px_rgba(65,80,140,0.15)]">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
               Carpet Cleaning
             </p>
@@ -195,7 +179,7 @@ export function HeroAndServices() {
               {serviceFeatures.map((feature) => (
                 <div
                   key={feature.title}
-                  className="rounded-3xl border border-border bg-muted px-5 py-4"
+                  className="rounded-xl border border-border bg-card px-5 py-4"
                 >
                   <p className="text-sm font-semibold text-primary">
                     ✦ {feature.title}

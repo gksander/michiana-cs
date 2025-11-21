@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL } from "@/lib/consts";
+
 const steps = [
   {
     title: "Request a free quote",
@@ -21,20 +23,12 @@ const steps = [
   },
 ];
 
-const contactEmail = "hello@michianacs.com";
-
 export function ContactSection() {
   return (
     <section
       id="contact"
       className="relative overflow-hidden bg-primary py-20 text-primary-foreground"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-12 h-72 w-72 rounded-full bg-accent/30 blur-[160px]" />
-        <div className="absolute right-[-10%] top-24 h-96 w-96 rounded-[45%] bg-primary/40 blur-[180px]" />
-        <div className="absolute inset-0 bg-linear-to-br from-primary via-primary/80 to-accent/50" />
-      </div>
-
       <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-8 text-primary-foreground">
           <p className="text-sm font-semibold uppercase tracking-[0.4em] text-accent">
@@ -52,11 +46,11 @@ export function ContactSection() {
 
           <div className="flex flex-wrap gap-4 text-sm text-primary-foreground/80">
             <a
-              href={`mailto:${contactEmail}`}
+              href={`mailto:${CONTACT_EMAIL}`}
               className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-5 py-2 font-semibold text-primary-foreground transition hover:bg-primary-foreground/20"
             >
               <span className="text-lg">✉️</span>
-              {contactEmail}
+              {CONTACT_EMAIL}
             </a>
             <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 px-5 py-2 font-semibold">
               <span className="text-lg">🛡️</span>
@@ -78,14 +72,16 @@ export function ContactSection() {
                     Step 0{index + 1}
                   </p>
                   <p className="text-lg font-semibold">{step.title}</p>
-                  <p className="text-sm text-primary-foreground/80">{step.description}</p>
+                  <p className="text-sm text-primary-foreground/80">
+                    {step.description}
+                  </p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-[32px] border border-primary-foreground/10 bg-card text-foreground shadow-[0_35px_65px_rgba(17,40,101,0.35)]">
+        <div className="rounded-[32px] border border-primary-foreground/10 bg-card text-card-foreground shadow-2xl">
           <div className="space-y-6 p-8">
             <div className="space-y-2">
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-primary">
@@ -106,16 +102,16 @@ export function ContactSection() {
                 Direct email
               </p>
               <a
-                href={`mailto:${contactEmail}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="mt-2 block text-xl font-semibold text-foreground transition hover:text-primary"
               >
-                {contactEmail}
+                {CONTACT_EMAIL}
               </a>
               <p className="mt-2 text-sm text-muted-foreground">
                 Expect a thoughtful reply within one business day.
               </p>
               <a
-                href={`mailto:${contactEmail}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="mt-4 block w-full rounded-2xl bg-linear-to-r from-primary to-accent px-4 py-3 text-center text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:shadow-primary/40"
               >
                 Email our team

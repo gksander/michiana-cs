@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="bg-muted pt-16 pb-10 text-foreground">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col gap-10 rounded-[40px] bg-card px-8 py-10 shadow-[0_25px_55px_rgba(68,87,151,0.12)] lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-10 rounded-3xl bg-card px-8 py-10 shadow-2xl lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-4">
             <div className="flex size-14 items-center justify-center rounded-3xl bg-linear-to-br from-primary to-accent text-lg font-semibold text-primary-foreground shadow-lg shadow-primary/20">
               MCS
