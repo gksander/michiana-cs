@@ -29,7 +29,7 @@ export function ContactSection() {
       id="contact"
       className="relative overflow-hidden bg-primary py-20 text-primary-foreground"
     >
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-8 text-primary-foreground">
           <p className="text-sm font-semibold uppercase tracking-[0.4em] text-accent">
             Boost your business space
@@ -52,10 +52,6 @@ export function ContactSection() {
               <span className="text-lg">✉️</span>
               {CONTACT_EMAIL}
             </a>
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 px-5 py-2 font-semibold">
-              <span className="text-lg">🛡️</span>
-              Your information is 100% secure
-            </span>
           </div>
 
           <ul className="space-y-4">

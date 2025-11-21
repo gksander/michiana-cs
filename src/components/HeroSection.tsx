@@ -2,7 +2,7 @@ import { SECTION_IDS } from "@/lib/consts";
 
 export function HeroSection() {
   return (
-    <section className="relative mx-auto mt-4 grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center py-16">
+    <section className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center py-24">
       <div className="space-y-8">
         <div className="space-y-4">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
