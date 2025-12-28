@@ -82,28 +82,17 @@ export function ContactSectionTwo() {
               Get a quote or get in touch
             </h2>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-400">
-              Reach out to us for a free quote or to discuss your cleaning
-              needs.
+              Reach out directly to{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-accent font-semibold"
+              >
+                {CONTACT_EMAIL}
+              </a>{" "}
+              with inquiries or complete the provided form for a free quote or
+              to discuss your cleaning needs.
             </p>
             <dl className="mt-10 space-y-4 text-base/7 text-gray-600 dark:text-gray-300">
-              <div className="flex gap-x-4">
-                <dt className="flex-none">
-                  <span className="sr-only">Location</span>
-                  <MapPinIcon
-                    aria-hidden="true"
-                    className="h-7 w-6 text-gray-400"
-                  />
-                </dt>
-                <dd>
-                  <a
-                    href="mailto:hello@example.com"
-                    className="hover:text-gray-900 dark:hover:text-white"
-                  >
-                    Valparaiso, Indiana
-                  </a>
-                </dd>
-              </div>
-
               <div className="flex gap-x-4">
                 <dt className="flex-none">
                   <span className="sr-only">Email</span>
@@ -119,6 +108,19 @@ export function ContactSectionTwo() {
                   >
                     {CONTACT_EMAIL}
                   </a>
+                </dd>
+              </div>
+
+              <div className="flex gap-x-4">
+                <dt className="flex-none">
+                  <span className="sr-only">Location</span>
+                  <MapPinIcon
+                    aria-hidden="true"
+                    className="h-7 w-6 text-gray-400"
+                  />
+                </dt>
+                <dd>
+                  <span>Valparaiso, Indiana</span>
                 </dd>
               </div>
 
@@ -176,6 +178,7 @@ export function ContactSectionTwo() {
             formRef.current.submit();
           }
         }}
+        className="lg:pt-16"
       >
         <div className="">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6">
