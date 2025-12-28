@@ -1,17 +1,12 @@
 ---
-import "@fontsource-variable/raleway";
-import "../styles/global.css";
-import { ContactSection } from "@/components/ContactSection";
+import { ContactSectionTwo } from "@/components/ContactSectionTwo";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { HeroSection } from "@/components/HeroSection";
-import { ServicesSection } from "@/components/ServicesSection";
-import { WhyUsSection } from "@/components/WhyUsSection";
-import { BUSINESS_NAME } from "@/lib/consts";
 import { HeroTwo } from "@/components/HeroTwo";
 import { ServicesSectionTwo } from "@/components/ServicesSectionTwo";
-import { ContactSectionTwo } from "@/components/ContactSectionTwo";
+import { BUSINESS_NAME } from "@/lib/consts";
+import "@fontsource-variable/raleway";
 import { Image, getImage } from "astro:assets";
+import "../styles/global.css";
 
 import House from "@/assets/img/house1.jpg";
 import House2 from "@/assets/img/house2.jpg";
@@ -50,15 +45,10 @@ const images = await Promise.all([
         </div>
       </div>
 
-      <!-- <Header /> -->
-
-      <!-- <HeroSection /> -->
       <HeroTwo client:load images={images} />
       <ServicesSectionTwo>
         <Image src={House} alt="House" />
       </ServicesSectionTwo>
-      <!-- <WhyUsSection />
-      <ServicesSection /> -->
       <ContactSectionTwo />
     </main>
 
