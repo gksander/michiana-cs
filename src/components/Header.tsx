@@ -1,3 +1,4 @@
+import { CTALink } from "@/components/CTALink";
 import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
 
 const navLinks = [
@@ -9,15 +10,15 @@ export function Header() {
   return (
     <header className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
       <div className="flex items-center gap-2">
-        <div className="flex size-12 items-center justify-center rounded-2xl bg-linear-to-br from-primary to-accent text-primary-foreground font-semibold">
-          MCS
+        <div className="flex size-12 items-center justify-center rounded-2xl bg-linear-to-br from-primary to-secondary text-primary-foreground font-semibold">
+          MG
         </div>
         <div>
           <p className="text-lg font-semibold text-foreground">
             {BUSINESS_NAME}
           </p>
-          <p className="text-xs tracking-[0.2em] text-muted-foreground">
-            Commercial care across the Michiana region
+          <p className="text-xs tracking-[0.1em] text-muted-foreground">
+            Michiana's trusted commercial cleaning company
           </p>
         </div>
       </div>
@@ -35,12 +36,7 @@ export function Header() {
           ))}
         </nav>
 
-        <a
-          href={`#${SECTION_IDS.CONTACT}`}
-          className="rounded-full bg-linear-to-r from-primary to-accent px-5 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:shadow-primary/50"
-        >
-          Get a free quote
-        </a>
+        <CTALink href={`#${SECTION_IDS.CONTACT}`}>Get a free quote</CTALink>
       </div>
     </header>
   );

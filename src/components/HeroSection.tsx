@@ -1,3 +1,5 @@
+import { CTALink } from "@/components/CTALink";
+import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { SECTION_IDS } from "@/lib/consts";
 
 export function HeroSection() {
@@ -5,9 +7,7 @@ export function HeroSection() {
     <section className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center py-24">
       <div className="space-y-8">
         <div className="space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-            Trusted cleaning partners
-          </p>
+          <SectionEyebrow>Trusted cleaning partners</SectionEyebrow>
           <h1 className="text-4xl font-bold leading-16 text-foreground md:text-5xl lg:text-6xl">
             Michiana's trusted cleaning partner
           </h1>
@@ -19,12 +19,7 @@ export function HeroSection() {
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <a
-            href={`#${SECTION_IDS.CONTACT}`}
-            className="rounded-full bg-linear-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:shadow-primary/50"
-          >
-            Get a free quote
-          </a>
+          <CTALink href={`#${SECTION_IDS.CONTACT}`}>Get a free quote</CTALink>
         </div>
       </div>
 

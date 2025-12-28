@@ -1,3 +1,4 @@
+import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { CONTACT_EMAIL } from "@/lib/consts";
 
 const steps = [
@@ -27,27 +28,25 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-primary py-20 text-primary-foreground"
+      className="relative overflow-hidden bg-secondary py-20 text-secondary-foreground"
     >
       <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-8 text-primary-foreground">
-          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-accent">
-            Boost your business space
-          </p>
+        <div className="space-y-8">
+          <SectionEyebrow>Boost your business space</SectionEyebrow>
           <div className="space-y-4">
             <h2 className="text-3xl font-bold leading-tight md:text-4xl">
               Get started in 4 simple steps
             </h2>
-            <p className="text-base text-primary-foreground/80 md:text-lg">
+            <p className="text-base text-secondary-foreground/80 md:text-lg">
               We respond within one business day with the next best step for
               your cleaning or maintenance project.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 text-sm text-primary-foreground/80">
+          <div className="flex flex-wrap gap-4 text-sm text-secondary-foreground/80">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-5 py-2 font-semibold text-primary-foreground transition hover:bg-primary-foreground/20"
+              className="inline-flex items-center gap-2 rounded-full bg-secondary-foreground/10 px-5 py-2 font-semibold text-secondary-foreground transition hover:bg-secondary-foreground/20"
             >
               <span className="text-lg">✉️</span>
               {CONTACT_EMAIL}
@@ -68,7 +67,7 @@ export function ContactSection() {
                     Step 0{index + 1}
                   </p>
                   <p className="text-lg font-semibold">{step.title}</p>
-                  <p className="text-sm text-primary-foreground/80">
+                  <p className="text-sm text-secondary-foreground/80">
                     {step.description}
                   </p>
                 </div>
