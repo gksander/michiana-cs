@@ -45,7 +45,7 @@ export function ContactSectionTwo() {
               aria-hidden="true"
             />
           </div>
-          <h2 className="text-6xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             Get in touch
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
