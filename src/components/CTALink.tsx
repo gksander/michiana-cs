@@ -9,7 +9,7 @@ export function CTALink({
   return (
     <a
       className={cn(
-        "rounded-full px-5 py-2 text-sm font-semibold bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition hover:shadow-primary/50",
+        "px-8 py-3 text-xl font-semibold bg-accent hover:bg-accent/60 text-accent-foreground transition-colors duration-300",
         className,
       )}
       {...rest}
