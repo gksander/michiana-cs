@@ -21,6 +21,13 @@ const images = await Promise.all([
   getImage({ src: House4, format: "avif" }),
   getImage({ src: House5, format: "avif" }),
 ]);
+
+const SITE_URL = "https://michiana.group";
+const META_DESCRIPTION =
+  "Specialized cleaning services for new build properties across Michiana. From construction cleanup to move-in ready perfection, we deliver immaculate results for residential and commercial spaces.";
+const META_KEYWORDS =
+  "new build cleaning, construction cleanup, post-construction cleaning, residential cleaning, commercial cleaning, Michiana cleaning services, move-in ready cleaning, construction debris removal, new home cleaning, new build property cleaning, northwest Indiana, southwest Michigan, Michiana region, Gary cleaning, Hammond cleaning, East Chicago cleaning, Merrillville cleaning, Crown Point cleaning, Valparaiso cleaning, Portage cleaning, Michigan City cleaning, South Bend cleaning, Niles cleaning, St. Joseph cleaning, Benton Harbor cleaning, Kalamazoo cleaning, Battle Creek cleaning";
+const OG_IMAGE = `${SITE_URL}/og/site.png`;
 ---
 
 <html lang="en" class="dark">
@@ -29,8 +36,26 @@ const images = await Promise.all([
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={BUSINESS_NAME} />
+    <meta name="description" content={META_DESCRIPTION} />
+    <meta name="keywords" content={META_KEYWORDS} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={SITE_URL} />
     <title>{BUSINESS_NAME}</title>
+
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL} />
+    <meta property="og:title" content={BUSINESS_NAME} />
+    <meta property="og:description" content={META_DESCRIPTION} />
+    <meta property="og:image" content={OG_IMAGE} />
+    <meta property="og:site_name" content={BUSINESS_NAME} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={BUSINESS_NAME} />
+    <meta name="twitter:description" content={META_DESCRIPTION} />
+    <meta name="twitter:image" content={OG_IMAGE} />
   </head>
   <body id="top">
     <main class="min-h-screen bg-background text-foreground">
