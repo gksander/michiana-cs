@@ -52,13 +52,11 @@ export function ContactSectionTwo() {
             Have a question or ready to get started? Reach out to us directly
             via email and we'll get back to you as soon as possible.
           </p>
-          <div className="mt-16">
+          <div className="mt-12">
             {/* Email display with icon */}
-            <div className="mb-8 flex items-center justify-center gap-x-4">
-              <EnvelopeIcon className="h-8 w-8" aria-hidden="true" />
-              <span className="text-xl sm:text-3xl tracking-wider">
-                {CONTACT_EMAIL}
-              </span>
+            <div className="mb-8 flex flex-col gap-y-2 w-fit mx-auto">
+              <div className="text-2xl tracking-wider">{CONTACT_EMAIL}</div>
+              <div className="h-1 bg-linear-to-r from-accent via-accent/60 to-transparent rounded-full" />
             </div>
 
             {/* Action buttons */}
