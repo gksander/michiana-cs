@@ -38,7 +38,7 @@ export function ServicesSection() {
       </div>
 
       <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="rounded-[32px] bg-card/60 text-card-foreground p-8 shadow-[0_10px_15px_var(--color-primary)]">
+        <div className="rounded-[32px] bg-card/60 text-card-foreground p-8 shadow-[0_5px_10px_var(--color-primary)]">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
             Carpet Cleaning
           </p>

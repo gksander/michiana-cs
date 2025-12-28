@@ -18,7 +18,7 @@ export function Header() {
             {BUSINESS_NAME}
           </p>
           <p className="text-xs tracking-[0.1em] text-muted-foreground">
-            Michiana's trusted commercial cleaning company
+            Michiana's trusted cleaning partner
           </p>
         </div>
       </div>

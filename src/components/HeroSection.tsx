@@ -7,14 +7,14 @@ export function HeroSection() {
     <section className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center py-24">
       <div className="space-y-8">
         <div className="space-y-4">
-          <SectionEyebrow>Trusted cleaning partners</SectionEyebrow>
+          <SectionEyebrow>Michiana Group</SectionEyebrow>
           <h1 className="text-4xl font-bold leading-16 text-foreground md:text-5xl lg:text-6xl">
             Michiana's trusted cleaning partner
           </h1>
           <p className="text-lg text-muted-foreground md:text-xl">
-            Tailored commercial cleaning that matches your schedule, space, and
-            standards across the Michiana region. Immaculate results for
-            offices, healthcare, hospitality, and beyond.
+            Specialized cleaning services for new build properties across
+            Michiana. From construction cleanup to move-in ready perfection, we
+            deliver immaculate results for residential and commercial spaces.
           </p>
         </div>
 

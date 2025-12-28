@@ -17,9 +17,10 @@ export function WhyUsSection() {
             results across Michiana.
           </h2>
           <p className="text-lg text-secondary-foreground/80">
-            Our experienced team blends meticulous detail with modern
-            technology, ensuring a gleaming, healthy environment your teams and
-            clients will appreciate.
+            Specializing in new build cleaning across Michiana, we bring
+            construction cleanup expertise and attention to detail that ensures
+            every surface shines. From initial debris removal to final polish,
+            we make properties move-in ready.
           </p>
           <CTALink href={`#${SECTION_IDS.CONTACT}`}>Get a free quote</CTALink>
         </div>
@@ -40,10 +41,10 @@ export function WhyUsSection() {
 }
 
 const REASONS = [
-  "No lock-in contracts",
-  "Police-checked technicians",
-  "Family owned & local",
-  "Premium equipment",
-  "Transparent communication",
-  "Meticulous attention to detail",
+  "New build specialists",
+  "Post-construction expertise",
+  "Construction debris removal",
+  "Move-in ready guarantee",
+  "Residential & commercial",
+  "Meticulous detail work",
 ];
