@@ -10,6 +10,45 @@ const navLinks = [
   { label: "Get a quote", href: `#${SECTION_IDS.CONTACT}` },
 ];
 
+function CertificationRibbon() {
+  return (
+    <div className="flex flex-col items-center justify-center gap-24 bg-white/5 px-6 py-6 backdrop-blur-sm sm:flex-row sm:gap-20 lg:px-8">
+      {/* OSHA Group */}
+      <div className="flex items-center gap-3">
+        <img
+          src="/img/osha.png"
+          alt="OSHA"
+          className="h-20 aspect-square object-contain brightness-0 invert p-2"
+        />
+        <div className="flex flex-col">
+          <span className="text-lg font-semibold text-white">
+            OSHA Certified
+          </span>
+          <span className="text-xs text-gray-400">
+            Comprehensive Safety & Compliance Standards
+          </span>
+        </div>
+      </div>
+      {/* IWCA Group */}
+      <div className="flex items-center gap-3">
+        <img
+          src="/img/iwca.png"
+          alt="IWCA"
+          className="h-20 aspect-square object-contain brightness-0 invert"
+        />
+        <div className="flex flex-col">
+          <span className="text-lg font-semibold text-white">
+            Member of IWCA
+          </span>
+          <span className="text-xs text-gray-400">
+            International Window Cleaning Association
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 type Props = {
   images: GetImageResult[];
 };
@@ -160,42 +199,8 @@ export function HeroTwo({ images }: Props) {
                   </div>
                 </div>
               </div>
-              {/* Certification Ribbon */}
-              <div className="mt-16 flex flex-col items-center justify-center gap-24 px-6 sm:flex-row sm:gap-20 lg:px-8">
-                {/* OSHA Group */}
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/img/osha.png"
-                    alt="OSHA"
-                    className="h-20 aspect-square object-contain brightness-0 invert p-2"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-lg font-semibold text-white">
-                      OSHA Certified
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      Comprehensive Safety & Compliance Standards
-                    </span>
-                  </div>
-                </div>
-                {/* IWCA Group */}
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/img/iwca.png"
-                    alt="IWCA"
-                    className="h-20 aspect-square object-contain brightness-0 invert"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-lg font-semibold text-white">
-                      Member of IWCA
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      International Window Cleaning Association
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
+            <CertificationRibbon />
           </div>
         </div>
       </main>
