@@ -167,11 +167,16 @@ export function HeroTwo({ images }: Props) {
                   <img
                     src="/img/osha.png"
                     alt="OSHA"
-                    className="h-20 aspect-square object-contain brightness-0 invert"
+                    className="h-20 aspect-square object-contain brightness-0 invert p-2"
                   />
-                  <span className="text-lg font-semibold text-white">
-                    OSHA Certified
-                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-lg font-semibold text-white">
+                      OSHA Certified
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      Comprehensive Safety & Compliance Standards
+                    </span>
+                  </div>
                 </div>
                 {/* IWCA Group */}
                 <div className="flex items-center gap-3">
