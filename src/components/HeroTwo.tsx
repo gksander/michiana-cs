@@ -160,6 +160,36 @@ export function HeroTwo({ images }: Props) {
                   </div>
                 </div>
               </div>
+              {/* Certification Ribbon */}
+              <div className="mt-16 flex flex-col items-center justify-center gap-24 px-6 sm:flex-row sm:gap-20 lg:px-8">
+                {/* OSHA Group */}
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/img/osha.png"
+                    alt="OSHA"
+                    className="h-20 aspect-square object-contain brightness-0 invert"
+                  />
+                  <span className="text-lg font-semibold text-white">
+                    OSHA Certified
+                  </span>
+                </div>
+                {/* IWCA Group */}
+                <div className="flex items-center gap-3">
+                  <img
+                    src="/img/iwca.png"
+                    alt="IWCA"
+                    className="h-20 aspect-square object-contain brightness-0 invert"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-lg font-semibold text-white">
+                      Member of IWCA
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      International Window Cleaning Association
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
