@@ -17,6 +17,7 @@ import "../styles/global.css";
   <body id="top" class="flex h-screen flex-col overflow-hidden">
     <main
       class="relative flex min-h-0 flex-1 flex-col overflow-hidden bg-background text-foreground"
+      style="background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px); background-size: 120px 120px; mask-image: radial-gradient(ellipse 80rem 80rem at 50% 0%, white, transparent); -webkit-mask-image: radial-gradient(ellipse 80rem 80rem at 50% 0%, white, transparent);"
     >
       <!-- Gradient blur orbs -->
       <div class="pointer-events-none absolute inset-0 opacity-50">
@@ -28,41 +29,6 @@ import "../styles/global.css";
           class="absolute right-0 top-0 h-72 w-72 rounded-[45%] bg-accent/30 blur-[120px]"
         >
         </div>
-      </div>
-
-      <!-- Grid background (same as HeroTwo) -->
-      <div class="absolute inset-0 -z-10">
-        <svg
-          aria-hidden="true"
-          class="absolute inset-0 stroke-white/10 mask-[radial-gradient(32rem_32rem_at_center,white,transparent)]"
-        >
-          <defs>
-            <pattern
-              x="50%"
-              y={-1}
-              id="404-grid-pattern"
-              width={200}
-              height={200}
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M.5 200V.5H200"
-                fill="none"
-                stroke="rgba(255,255,255,0.1)"
-                stroke-width="1"></path>
-            </pattern>
-          </defs>
-          <svg x="50%" y={-1} class="overflow-visible fill-secondary">
-            <path
-              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-              stroke-width={0}></path>
-          </svg>
-          <rect
-            fill="url(#404-grid-pattern)"
-            width="100%"
-            height="100%"
-            stroke-width={0}></rect>
-        </svg>
       </div>
 
       <!-- Gradient blob overlay -->
