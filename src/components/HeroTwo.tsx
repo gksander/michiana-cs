@@ -12,16 +12,16 @@ const navLinks = [
 
 function CertificationRibbon() {
   return (
-    <div className="flex flex-col items-center justify-center gap-24 bg-white/5 px-6 py-6 backdrop-blur-sm sm:flex-row sm:gap-20 lg:px-8">
+    <div className="flex flex-col items-center justify-center gap-24 bg-zinc-800/30 px-6 py-8 backdrop-blur-sm sm:flex-row sm:gap-20 lg:px-8">
       {/* OSHA Group */}
-      <div className="flex items-center gap-3">
+      <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
         <img
           src="/img/osha.png"
           alt="OSHA"
-          className="h-20 aspect-square object-contain brightness-0 invert p-2"
+          className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
         />
         <div className="flex flex-col">
-          <span className="text-lg font-semibold text-white">
+          <span className="text-xl font-semibold text-white">
             OSHA Certified
           </span>
           <span className="text-xs text-gray-400">
@@ -30,14 +30,14 @@ function CertificationRibbon() {
         </div>
       </div>
       {/* IWCA Group */}
-      <div className="flex items-center gap-3">
+      <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
         <img
           src="/img/iwca.png"
           alt="IWCA"
-          className="h-20 aspect-square object-contain brightness-0 invert"
+          className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
         />
         <div className="flex flex-col">
-          <span className="text-lg font-semibold text-white">
+          <span className="text-xl font-semibold text-white">
             Member of IWCA
           </span>
           <span className="text-xs text-gray-400">
