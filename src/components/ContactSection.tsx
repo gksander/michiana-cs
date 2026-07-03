@@ -44,14 +44,14 @@ export function ContactSection() {
         </svg>
         <div
           aria-hidden="true"
-          className="absolute top-[calc(100%-13rem)] -left-56 transform-gpu blur-3xl lg:top-[calc(50%-7rem)] lg:left-[max(-14rem,calc(100%-59rem))]"
+          className="absolute top-[calc(100%-13rem)] -left-56 lg:top-[calc(50%-7rem)] lg:left-[max(-14rem,calc(100%-59rem))]"
         >
           <div
+            className="aspect-1155/678 w-288.75 opacity-10 dark:opacity-20"
             style={{
-              clipPath:
-                "polygon(74.1% 56.1%, 100% 38.6%, 97.5% 73.3%, 85.5% 100%, 80.7% 98.2%, 72.5% 67.7%, 60.2% 37.8%, 52.4% 32.2%, 47.5% 41.9%, 45.2% 65.8%, 27.5% 23.5%, 0.1% 35.4%, 17.9% 0.1%, 27.6% 23.5%, 76.1% 2.6%, 74.1% 56.1%)",
+              background:
+                "radial-gradient(closest-side, var(--accent), transparent)",
             }}
-            className="aspect-1155/678 w-288.75 bg-linear-to-br from-accent via-background/30 to-background opacity-10 dark:opacity-20"
           />
         </div>
       </div>

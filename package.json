@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",
-    "build": "tsx scripts/generate-og.mts && vite build",
+    "build": "tsx scripts/generate-og.mts && vite build && tsx scripts/optimize-html.mts",
     "build:og": "tsx scripts/generate-og.mts",
     "build:og:watch": "tsx watch scripts/generate-og.mts",
     "preview": "vite preview",

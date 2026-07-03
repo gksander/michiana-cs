@@ -44,9 +44,24 @@ function Home() {
   return (
     <>
       <main className="min-h-screen bg-background text-foreground">
-        <div className="pointer-events-none absolute inset-0 opacity-50">
-          <div className="absolute -left-32 top-12 h-64 w-64 rounded-[40%] bg-primary/30 blur-[120px]" />
-          <div className="absolute right-0 top-0 h-72 w-72 rounded-[45%] bg-accent/30 blur-[120px]" />
+        {/* Decorative glows. Rendered as soft radial-gradients (not runtime
+            blur filters) so mobile GPUs don't have to Gaussian-blur large,
+            high-DPR layers on every paint. */}
+        <div className="pointer-events-none absolute inset-0 opacity-30">
+          <div
+            className="absolute -left-40 top-0 h-128 w-lg"
+            style={{
+              background:
+                "radial-gradient(closest-side, var(--primary), transparent)",
+            }}
+          />
+          <div
+            className="absolute -right-24 -top-16 h-136 w-136"
+            style={{
+              background:
+                "radial-gradient(closest-side, var(--accent), transparent)",
+            }}
+          />
         </div>
 
         <Hero />
