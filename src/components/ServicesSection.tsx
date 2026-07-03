@@ -1,6 +1,9 @@
 import { BuildingOffice2Icon, HomeIcon } from "@heroicons/react/20/solid";
+import { BlurImage } from "@/components/BlurImage";
 import { SECTION_IDS } from "@/lib/consts";
-import house1 from "@/assets/img/house1.jpg?format=avif&as=metadata";
+// Rendered up to ~528px wide in the services card; cap width for retina.
+import house1 from "@/assets/img/house1.jpg?format=avif&w=1100&as=metadata";
+import house1Blur from "@/assets/img/house1.jpg?blurhash";
 
 const features = [
   {
@@ -57,10 +60,11 @@ export function ServicesSection() {
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-primary/20 opacity-20 ring-1 ring-white ring-inset"
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <img
+                <BlurImage
                   src={house1.src}
                   width={house1.width}
                   height={house1.height}
+                  blurhash={house1Blur}
                   alt="House"
                 />
               </div>

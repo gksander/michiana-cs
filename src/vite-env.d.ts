@@ -7,7 +7,12 @@ type ImageMetadata = {
   format: string;
 };
 
-declare module "*?format=avif&as=metadata" {
+declare module "*as=metadata" {
   const metadata: ImageMetadata;
   export default metadata;
+}
+
+declare module "*?blurhash" {
+  const blurhash: string;
+  export default blurhash;
 }

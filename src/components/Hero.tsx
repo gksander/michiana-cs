@@ -1,13 +1,47 @@
+import { BlurImage } from "@/components/BlurImage";
 import { CTALink } from "@/components/CTALink";
 import { Logo } from "@/components/Logo";
 import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
-import house1 from "@/assets/img/house1.jpg?format=avif&as=metadata";
-import house2 from "@/assets/img/house2.jpg?format=avif&as=metadata";
-import house3 from "@/assets/img/house3.jpg?format=avif&as=metadata";
-import house4 from "@/assets/img/house4.jpg?format=avif&as=metadata";
-import house5 from "@/assets/img/house5.jpg?format=avif&as=metadata";
+// Rendered in fixed 176px (w-44) columns; cap width for retina without shipping full-res.
+import house1 from "@/assets/img/house1.jpg?format=avif&w=480&as=metadata";
+import house2 from "@/assets/img/house2.jpg?format=avif&w=480&as=metadata";
+import house3 from "@/assets/img/house3.jpg?format=avif&w=480&as=metadata";
+import house4 from "@/assets/img/house4.jpg?format=avif&w=480&as=metadata";
+import house5 from "@/assets/img/house5.jpg?format=avif&w=480&as=metadata";
+// BlurHash strings (computed at build time) for blur-up LQIP placeholders.
+import house1Blur from "@/assets/img/house1.jpg?blurhash";
+import house2Blur from "@/assets/img/house2.jpg?blurhash";
+import house3Blur from "@/assets/img/house3.jpg?blurhash";
+import house4Blur from "@/assets/img/house4.jpg?blurhash";
+import house5Blur from "@/assets/img/house5.jpg?blurhash";
+// Rendered in 80px (h-20 w-20) boxes as white silhouettes; cap width for retina.
+import osha from "@/assets/img/osha.png?w=160&as=metadata";
+import iwca from "@/assets/img/iwca.png?w=160&as=metadata";
 
-const images = [house1, house2, house3, house4, house5];
+const images = [
+  { img: house1, blurhash: house1Blur },
+  { img: house2, blurhash: house2Blur },
+  { img: house3, blurhash: house3Blur },
+  { img: house4, blurhash: house4Blur },
+  { img: house5, blurhash: house5Blur },
+];
+
+function HousePhoto({ image }: { image: (typeof images)[number] }) {
+  return (
+    <div className="relative">
+      <BlurImage
+        src={image.img.src}
+        width={image.img.width}
+        height={image.img.height}
+        blurhash={image.blurhash}
+        priority
+        alt="House"
+        className="aspect-2/3 w-full rounded-xl object-cover shadow-lg"
+      />
+      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
+    </div>
+  );
+}
 
 const navLinks = [
   // { label: "Why choose us?", href: `#${SECTION_IDS.WHY_CHOOSE_US}` },
@@ -108,60 +142,15 @@ export function Hero() {
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                   <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-0 xl:pt-80">
-                    <div className="relative">
-                      <img
-                        src={images[0].src}
-                        alt="House"
-                        width={images[0].width}
-                        height={images[0].height}
-                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
-                    </div>
+                    <HousePhoto image={images[0]} />
                   </div>
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                    <div className="relative">
-                      <img
-                        src={images[1].src}
-                        alt="House"
-                        width={images[1].width}
-                        height={images[1].height}
-                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
-                    </div>
-                    <div className="relative">
-                      <img
-                        src={images[2].src}
-                        alt="House"
-                        width={images[2].width}
-                        height={images[2].height}
-                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
-                    </div>
+                    <HousePhoto image={images[1]} />
+                    <HousePhoto image={images[2]} />
                   </div>
                   <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                    <div className="relative">
-                      <img
-                        src={images[3].src}
-                        alt="House"
-                        width={images[3].width}
-                        height={images[3].height}
-                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
-                    </div>
-                    <div className="relative">
-                      <img
-                        src={images[4].src}
-                        alt="House"
-                        width={images[4].width}
-                        height={images[4].height}
-                        className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
-                    </div>
+                    <HousePhoto image={images[3]} />
+                    <HousePhoto image={images[4]} />
                   </div>
                 </div>
               </div>
@@ -180,7 +169,9 @@ function CertificationRibbon() {
       {/* OSHA Group */}
       <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
         <img
-          src="/img/osha.png"
+          src={osha.src}
+          width={osha.width}
+          height={osha.height}
           alt="OSHA"
           className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
         />
@@ -194,7 +185,9 @@ function CertificationRibbon() {
       {/* IWCA Group */}
       <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
         <img
-          src="/img/iwca.png"
+          src={iwca.src}
+          width={iwca.width}
+          height={iwca.height}
           alt="IWCA"
           className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
         />

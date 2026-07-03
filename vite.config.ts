@@ -4,11 +4,13 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { imagetools } from "vite-imagetools";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { blurhash } from "./scripts/blurhash-plugin";
 
 export default defineConfig({
   plugins: [
     tsconfigPaths(),
     tailwindcss(),
+    blurhash(),
     imagetools(),
     tanstackStart({
       prerender: {
