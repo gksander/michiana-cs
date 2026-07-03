@@ -1,8 +1,6 @@
 import { BuildingOffice2Icon, HomeIcon } from "@heroicons/react/20/solid";
 import { SECTION_IDS } from "@/lib/consts";
-import House from "@/assets/img/house1.jpg";
-import { Image } from "astro:assets";
-import type { PropsWithChildren } from "react";
+import house1 from "@/assets/img/house1.jpg?format=avif&as=metadata";
 
 const features = [
   {
@@ -19,7 +17,7 @@ const features = [
   },
 ];
 
-export function ServicesSectionTwo({ children }: PropsWithChildren) {
+export function ServicesSectionTwo() {
   return (
     <div className="overflow-hidden py-24 sm:py-32" id={SECTION_IDS.SERVICES}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -59,7 +57,12 @@ export function ServicesSectionTwo({ children }: PropsWithChildren) {
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-primary/20 opacity-20 ring-1 ring-white ring-inset"
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                {children}
+                <img
+                  src={house1.src}
+                  width={house1.width}
+                  height={house1.height}
+                  alt="House"
+                />
               </div>
               <div
                 aria-hidden="true"

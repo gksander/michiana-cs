@@ -1,8 +1,12 @@
-"use client";
-
 import { CTALink } from "@/components/CTALink";
 import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
-import type { GetImageResult } from "astro";
+import house1 from "@/assets/img/house1.jpg?format=avif&as=metadata";
+import house2 from "@/assets/img/house2.jpg?format=avif&as=metadata";
+import house3 from "@/assets/img/house3.jpg?format=avif&as=metadata";
+import house4 from "@/assets/img/house4.jpg?format=avif&as=metadata";
+import house5 from "@/assets/img/house5.jpg?format=avif&as=metadata";
+
+const images = [house1, house2, house3, house4, house5];
 
 const navLinks = [
   // { label: "Why choose us?", href: `#${SECTION_IDS.WHY_CHOOSE_US}` },
@@ -49,11 +53,7 @@ function CertificationRibbon() {
   );
 }
 
-type Props = {
-  images: GetImageResult[];
-};
-
-export function HeroTwo({ images }: Props) {
+export function HeroTwo() {
   return (
     <div className="">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -151,7 +151,8 @@ export function HeroTwo({ images }: Props) {
                       <img
                         src={images[0].src}
                         alt="House"
-                        {...images[0].attributes}
+                        width={images[0].width}
+                        height={images[0].height}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
@@ -162,7 +163,8 @@ export function HeroTwo({ images }: Props) {
                       <img
                         src={images[1].src}
                         alt="House"
-                        {...images[1].attributes}
+                        width={images[1].width}
+                        height={images[1].height}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
@@ -171,7 +173,8 @@ export function HeroTwo({ images }: Props) {
                       <img
                         src={images[2].src}
                         alt="House"
-                        {...images[2].attributes}
+                        width={images[2].width}
+                        height={images[2].height}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
@@ -182,7 +185,8 @@ export function HeroTwo({ images }: Props) {
                       <img
                         src={images[3].src}
                         alt="House"
-                        {...images[3].attributes}
+                        width={images[3].width}
+                        height={images[3].height}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />
@@ -191,7 +195,8 @@ export function HeroTwo({ images }: Props) {
                       <img
                         src={images[4].src}
                         alt="House"
-                        {...images[4].attributes}
+                        width={images[4].width}
+                        height={images[4].height}
                         className="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg dark:bg-gray-700/5"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset dark:ring-white/10" />

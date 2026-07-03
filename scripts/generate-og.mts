@@ -2,9 +2,9 @@ import satori from "satori";
 import fs from "node:fs";
 import path from "node:path";
 import { html } from "satori-html";
-import { BUSINESS_NAME } from "@/lib/consts";
 import type { ReactNode } from "react";
 import sharp from "sharp";
+import { BUSINESS_NAME } from "../src/lib/consts.ts";
 
 const SCALE = 2;
 
@@ -31,11 +31,11 @@ const BoldFont = fs.readFileSync(
   path.resolve("./src/assets/fonts/Raleway-Bold.ttf"),
 );
 
-export async function GET() {
+async function main() {
   // Load and process the house image
   // Read the image file directly from the assets directory
   const imagePath = path.resolve("./src/assets/img/house1.jpg");
-  const img = await sharp(imagePath);
+  const img = sharp(imagePath);
 
   const imageBase64 = (
     await img
@@ -216,14 +216,14 @@ export async function GET() {
     height: scaledHeight,
   });
 
-  const png = sharp(Buffer.from(svg)).png();
-  const response = (await png.toBuffer()) as unknown as BodyInit;
+  const pngBuffer = await sharp(Buffer.from(svg)).png().toBuffer();
 
-  return new Response(response, {
-    status: 200,
-    headers: {
-      "Content-Type": "image/png",
-      "Cache-Control": "public, max-age=31536000, immutable",
-    },
-  });
+  const outDir = path.resolve("./public/og");
+  fs.mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, "site.png");
+  fs.writeFileSync(outPath, pngBuffer);
+
+  console.log(`Generated ${path.relative(process.cwd(), outPath)}`);
 }
+
+await main();

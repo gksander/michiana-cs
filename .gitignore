@@ -1,7 +1,12 @@
 # build output
 dist/
+.output/
+.nitro/
+.tanstack/
 # generated types
-.astro/
+src/routeTree.gen.ts
+# generated OG image
+public/og/site.png
 
 # dependencies
 node_modules/
