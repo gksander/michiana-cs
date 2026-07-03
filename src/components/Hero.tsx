@@ -112,7 +112,7 @@ export function Hero() {
           </svg>
           <div
             aria-hidden="true"
-            className="absolute top-0 right-0 left-1/2 -z-10 -ml-24 lg:ml-24 xl:ml-48"
+            className="absolute top-0 right-0 left-1/2 -z-10 -ml-24 overflow-hidden lg:ml-24 xl:ml-48"
           >
             <div
               className="aspect-801/1036 w-200.25 opacity-30"
