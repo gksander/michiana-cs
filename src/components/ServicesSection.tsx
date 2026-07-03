@@ -17,7 +17,7 @@ const features = [
   },
 ];
 
-export function ServicesSectionTwo() {
+export function ServicesSection() {
   return (
     <div className="overflow-hidden py-24 sm:py-32" id={SECTION_IDS.SERVICES}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -26,7 +26,7 @@ export function ServicesSectionTwo() {
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
               <h2 className="text-base/7 font-semibold">What we offer</h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-                New build cleaning
+                Post-build services
               </p>
               <p className="mt-6 text-lg/8 text-muted">
                 Specializing in new build cleaning across Michiana, we bring

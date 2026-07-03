@@ -1,7 +1,7 @@
 import { CONTACT_EMAIL, SECTION_IDS } from "@/lib/consts";
 import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/24/outline";
 
-export function ContactSectionTwoSimple() {
+export function ContactSection() {
   return (
     <div className="relative isolate" id={SECTION_IDS.CONTACT}>
       {/* Background pattern */}

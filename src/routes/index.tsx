@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ContactSectionTwoSimple } from "@/components/ContactSectionTwoSimple";
+import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { ServicesSectionTwo } from "@/components/ServicesSectionTwo";
+import { ServicesSection } from "@/components/ServicesSection";
 import { BUSINESS_NAME } from "@/lib/consts";
 
 const SITE_URL = "https://michiana.group";
@@ -50,8 +50,8 @@ function Home() {
         </div>
 
         <Hero />
-        <ServicesSectionTwo />
-        <ContactSectionTwoSimple />
+        <ServicesSection />
+        <ContactSection />
       </main>
 
       <Footer />
