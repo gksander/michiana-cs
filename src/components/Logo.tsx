@@ -22,7 +22,7 @@ export function Logo(props: React.SVGProps<SVGSVGElement>) {
       />
       <path
         d="M163 282.26V358.76H180.5V282.26H204.5V265.76H180.5V237.76H163V265.76H135V282.26H163Z"
-        fill="#B43842"
+        fill="#E6E6E6"
       />
     </svg>
   );

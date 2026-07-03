@@ -4,7 +4,6 @@ import path from "node:path";
 import { html } from "satori-html";
 import type { ReactNode } from "react";
 import sharp from "sharp";
-import { BUSINESS_NAME } from "../src/lib/consts.ts";
 
 const SCALE = 2;
 
@@ -21,6 +20,59 @@ const COLORS = {
   textWhite: "#ebebeb", // White text (oklch(0.9219 0 0))
   textGray: "#b6b6b6", // Light gray text (oklch(0.7155 0 0))
   strokeWhite: "#ffffff", // stroke-white/10 - will use opacity attribute
+  logoRed: "#B43842", // MG logo red (from Logo.tsx)
+  logoGray: "#E6E6E6", // MG logo light gray (from Logo.tsx)
+};
+
+// Tunable layout + typography values. Everything here is easy to tweak; sizes
+// are multiplied by SCALE for retina output.
+const CONFIG = {
+  padding: 64 * SCALE,
+  patternSize: 200 * SCALE, // background grid cell size
+  fadeRadius: 32 * 16 * SCALE, // radial fade radius (rem-ish -> px)
+
+  // Right-hand house photo
+  house: {
+    sourceResize: 500 * SCALE, // rasterized source resolution
+    width: 400 * SCALE, // displayed width
+    rightOffset: -20 * SCALE, // css `right` (negative bleeds off-canvas)
+    borderRadius: 12 * SCALE,
+  },
+
+  // Left lockup: overall column
+  lockupMaxWidth: 560 * SCALE,
+
+  // MG logo mark
+  logo: {
+    rasterWidth: 450 * SCALE, // rasterized source resolution
+    width: 340 * SCALE, // displayed width
+    marginBottom: 32 * SCALE,
+  },
+
+  // "MICHIANA"
+  michiana: {
+    fontSize: 70 * SCALE,
+    fontWeight: 600,
+    letterSpacing: "0.18em",
+    marginBottom: 16 * SCALE,
+  },
+
+  // "GROUP" row (word flanked by red rules)
+  group: {
+    fontSize: 50 * SCALE,
+    fontWeight: 500,
+    letterSpacing: "0.2em",
+    textPadding: 20 * SCALE, // horizontal gap between word and rules
+    ruleHeight: 3 * SCALE,
+    marginBottom: 32 * SCALE,
+  },
+
+  // "POST BUILD SERVICES"
+  tagline: {
+    fontSize: 30 * SCALE,
+    fontWeight: 500,
+    letterSpacing: "0.18em",
+  },
 };
 
 // Load Inter (static instances; satori doesn't support variable or woff2 fonts)
@@ -42,20 +94,42 @@ async function main() {
 
   const imageBase64 = (
     await img
-      .resize(500 * SCALE)
+      .resize(CONFIG.house.sourceResize)
       .jpeg()
       .toBuffer()
   ).toString("base64");
   const imageDataUrl = `data:image/jpeg;base64,${imageBase64}`;
 
-  const PADDING = 64 * SCALE;
+  // MG logo mark (paths copied from src/components/Logo.tsx), rasterized via
+  // sharp for pixel-perfect fidelity instead of relying on satori inline SVG.
+  const logoSvg = `<svg viewBox="0 0 639 369" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M454.5 0C521.44 0 580.053 35.6505 612.391 89H552.028C527.251 63.7 492.709 48 454.5 48C416.305 48 381.775 63.6877 357 88.9707V27.8379C385.289 10.1945 418.704 0 454.5 0Z" fill="${COLORS.logoGray}" />
+    <path d="M454.5 321C404.08 321 359.637 293.661 336 253V27.2598H288L169.209 135.334L48 27.2598H0V358H48V92.9414L169.791 199.666L288 92.2402L287.5 253C314.698 320.979 376.809 369 454.5 369C477.472 369 499.463 364.799 519.749 357.128V304.423C500.364 314.992 478.134 321 454.5 321Z" fill="${COLORS.logoRed}" />
+    <path d="M638.354 200C633.027 264.042 594.993 318.792 541 347.504V290.097C555.08 278.55 566.807 264.241 575.358 248H443V200H638.354Z" fill="${COLORS.logoGray}" />
+    <path d="M163 282.26V358.76H180.5V282.26H204.5V265.76H180.5V237.76H163V265.76H135V282.26H163Z" fill="${COLORS.logoGray}" />
+  </svg>`;
+
+  const logoBase64 = (
+    await sharp(Buffer.from(logoSvg))
+      .resize(CONFIG.logo.rasterWidth)
+      .png()
+      .toBuffer()
+  ).toString("base64");
+  const logoDataUrl = `data:image/png;base64,${logoBase64}`;
+
+  const PADDING = CONFIG.padding;
 
   // Scale dimensions
   const scaledWidth = WIDTH * SCALE;
   const scaledHeight = HEIGHT * SCALE;
 
+  // Left edge (x) of the right-hand house photo. The lockup is centered
+  // horizontally in the region between the image's left edge (x=0) and this.
+  const houseLeftEdge =
+    scaledWidth - CONFIG.house.rightOffset - CONFIG.house.width;
+
   // Generate grid pattern lines (satori doesn't support SVG patterns)
-  const patternSize = 200 * SCALE;
+  const patternSize = CONFIG.patternSize;
   const gridLines: string[] = [];
   const startX = -scaledWidth / 2;
   const endX = scaledWidth / 2;
@@ -85,7 +159,7 @@ async function main() {
   const gridPattern = gridLines.join("");
 
   // Calculate the radius for the radial fade effect
-  const fadeRadius = 32 * 16 * SCALE;
+  const fadeRadius = CONFIG.fadeRadius;
 
   const markup = `
     <div
@@ -137,49 +211,93 @@ async function main() {
       <div
         style="
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            max-width: ${700 * SCALE}px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: ${houseLeftEdge}px;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
           "
       >
-        <h1
+        <div
           style="
-              font-size: ${72 * SCALE}px;
-              font-weight: 600;
-              line-height: 1.1;
-              color: ${COLORS.textWhite};
-              margin-bottom: ${32 * SCALE}px;
-              letter-spacing: -0.02em;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              max-width: ${CONFIG.lockupMaxWidth}px;
             "
         >
-          ${BUSINESS_NAME}
-        </h1>
+          <img
+            src="${logoDataUrl}"
+            alt="Michiana Group logo"
+            style="
+                width: ${CONFIG.logo.width}px;
+                margin-bottom: ${CONFIG.logo.marginBottom}px;
+              "
+          />
 
-        <p
-          style="
-              font-size: ${30 * SCALE}px;
-              font-weight: 700;
-              line-height: 1.5;
-              color: ${COLORS.textWhite};
-              margin-bottom: ${12 * SCALE}px;
-        "
-        >
-          Michiana's trusted new-build cleaning partner
-        </p>
+          <span
+            style="
+                font-size: ${CONFIG.michiana.fontSize}px;
+                font-weight: ${CONFIG.michiana.fontWeight};
+                line-height: 1;
+                color: ${COLORS.logoRed};
+                letter-spacing: ${CONFIG.michiana.letterSpacing};
+                margin-bottom: ${CONFIG.michiana.marginBottom}px;
+              "
+          >
+            MICHIANA
+          </span>
 
-        <p
-          style="
-              font-size: ${20 * SCALE}px;
-              font-weight: 500;
-              line-height: 1.5;
-              color: ${COLORS.textGray};
-              margin: 0;
-            "
-        >
-          Specialized cleaning services for new build properties across
-          Michiana. From construction cleanup to move-in ready perfection, we
-          deliver immaculate results for residential and commercial spaces.
-        </p>
+          <div
+            style="
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin-bottom: ${CONFIG.group.marginBottom}px;
+              "
+          >
+            <div
+              style="
+                  display: flex;
+                  flex-grow: 1;
+                  height: ${CONFIG.group.ruleHeight}px;
+                  background-color: ${COLORS.logoRed};
+                "
+            ></div>
+            <span
+              style="
+                  font-size: ${CONFIG.group.fontSize}px;
+                  font-weight: ${CONFIG.group.fontWeight};
+                  color: ${COLORS.logoGray};
+                  letter-spacing: ${CONFIG.group.letterSpacing};
+                  padding: 0 ${CONFIG.group.textPadding}px;
+                "
+            >
+              GROUP
+            </span>
+            <div
+              style="
+                  display: flex;
+                  flex-grow: 1;
+                  height: ${CONFIG.group.ruleHeight}px;
+                  background-color: ${COLORS.logoRed};
+                "
+            ></div>
+          </div>
+
+          <span
+            style="
+                font-size: ${CONFIG.tagline.fontSize}px;
+                font-weight: ${CONFIG.tagline.fontWeight};
+                color: ${COLORS.logoGray};
+                letter-spacing: ${CONFIG.tagline.letterSpacing};
+              "
+          >
+            POST BUILD SERVICES
+          </span>
+        </div>
       </div>
 
       <img
@@ -188,12 +306,12 @@ async function main() {
         style="
               position: absolute;
               top: ${PADDING}px;
-              right: -${SCALE * 20}px;
-              width: ${400 * SCALE}px;
+              right: ${CONFIG.house.rightOffset}px;
+              width: ${CONFIG.house.width}px;
               height: ${scaledHeight}px;
               bottom: 0;
               object-fit: cover;
-              border-radius: ${12 * SCALE}px;
+              border-radius: ${CONFIG.house.borderRadius}px;
               box-shadow: 0 ${4 * SCALE}px ${6 * SCALE}px rgba(0, 0, 0, 0.3);
             "
       />

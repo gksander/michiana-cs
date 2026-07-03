@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "tsx scripts/generate-og.mts && vite build",
+    "build:og": "tsx scripts/generate-og.mts",
+    "build:og:watch": "tsx watch scripts/generate-og.mts",
     "preview": "vite preview",
     "deploy": "pnpm run build && pnpm wrangler deploy"
   },
