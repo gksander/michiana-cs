@@ -6,7 +6,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { NotFound } from "@/components/NotFound";
-import "@fontsource-variable/raleway";
+import "@fontsource-variable/inter";
 import "@/styles/global.css";
 
 export const Route = createRootRoute({
