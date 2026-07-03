@@ -23,12 +23,15 @@ const COLORS = {
   strokeWhite: "#ffffff", // stroke-white/10 - will use opacity attribute
 };
 
-// Load Raleway font
-const RegularFont = fs.readFileSync(
-  path.resolve("./src/assets/fonts/Raleway-Regular.ttf"),
+// Load Inter (static instances; satori doesn't support variable or woff2 fonts)
+const MediumFont = fs.readFileSync(
+  path.resolve("./src/assets/fonts/Inter-Medium.ttf"),
+);
+const SemiBoldFont = fs.readFileSync(
+  path.resolve("./src/assets/fonts/Inter-SemiBold.ttf"),
 );
 const BoldFont = fs.readFileSync(
-  path.resolve("./src/assets/fonts/Raleway-Bold.ttf"),
+  path.resolve("./src/assets/fonts/Inter-Bold.ttf"),
 );
 
 async function main() {
@@ -92,7 +95,7 @@ async function main() {
         height: ${scaledHeight}px;
         background-color: ${COLORS.background};
         position: relative;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Inter', sans-serif;
         overflow: hidden;
         padding: ${PADDING}px ${PADDING}px;
       "
@@ -200,13 +203,19 @@ async function main() {
   const svg = await satori(html(markup) as ReactNode, {
     fonts: [
       {
-        name: "Raleway",
-        data: RegularFont,
+        name: "Inter",
+        data: MediumFont,
         style: "normal",
-        weight: 400,
+        weight: 500,
       },
       {
-        name: "Raleway",
+        name: "Inter",
+        data: SemiBoldFont,
+        style: "normal",
+        weight: 600,
+      },
+      {
+        name: "Inter",
         data: BoldFont,
         style: "normal",
         weight: 700,
