@@ -128,6 +128,12 @@ async function main() {
   const houseLeftEdge =
     scaledWidth - CONFIG.house.rightOffset - CONFIG.house.width;
 
+  // letter-spacing adds trailing space after the final glyph, making the text
+  // box wider than the visible text. Trim that trailing amount (one
+  // letter-spacing unit, in px) so the GROUP rules align with MICHIANA's ends.
+  const michianaTrailingTrim =
+    parseFloat(CONFIG.michiana.letterSpacing) * CONFIG.michiana.fontSize;
+
   // Generate grid pattern lines (satori doesn't support SVG patterns)
   const patternSize = CONFIG.patternSize;
   const gridLines: string[] = [];
@@ -244,6 +250,7 @@ async function main() {
                 line-height: 1;
                 color: ${COLORS.logoRed};
                 letter-spacing: ${CONFIG.michiana.letterSpacing};
+                margin-right: -${michianaTrailingTrim}px;
                 margin-bottom: ${CONFIG.michiana.marginBottom}px;
               "
           >
