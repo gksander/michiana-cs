@@ -17,16 +17,16 @@ export function NotFound() {
       >
         {/* Decorative glows as soft radial-gradients (not runtime blur
             filters) to avoid expensive GPU blur passes on mobile. */}
-        <div className="pointer-events-none absolute inset-0 opacity-30">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
           <div
-            className="absolute -left-40 top-0 h-128 w-lg"
+            className="absolute -left-32 top-12 h-64 w-64"
             style={{
               background:
                 "radial-gradient(closest-side, var(--primary), transparent)",
             }}
           />
           <div
-            className="absolute -right-24 -top-16 h-136 w-136"
+            className="absolute right-0 top-0 h-72 w-72"
             style={{
               background:
                 "radial-gradient(closest-side, var(--accent), transparent)",
@@ -37,7 +37,7 @@ export function NotFound() {
         {/* Gradient blob overlay */}
         <div
           aria-hidden="true"
-          className="absolute top-0 right-0 left-1/2 -z-10 -ml-24 lg:ml-24 xl:ml-48"
+          className="absolute top-0 right-0 left-1/2 -z-10 -ml-24 overflow-hidden lg:ml-24 xl:ml-48"
         >
           <div
             className="aspect-801/1036 w-200.25 opacity-30"

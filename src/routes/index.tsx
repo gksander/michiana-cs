@@ -43,20 +43,20 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      <main className="min-h-screen bg-background text-foreground">
+      <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
         {/* Decorative glows. Rendered as soft radial-gradients (not runtime
             blur filters) so mobile GPUs don't have to Gaussian-blur large,
             high-DPR layers on every paint. */}
-        <div className="pointer-events-none absolute inset-0 opacity-30">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
           <div
-            className="absolute -left-40 top-0 h-128 w-lg"
+            className="absolute -left-32 top-12 h-64 w-64"
             style={{
               background:
                 "radial-gradient(closest-side, var(--primary), transparent)",
             }}
           />
           <div
-            className="absolute -right-24 -top-16 h-136 w-136"
+            className="absolute right-0 top-0 h-72 w-72"
             style={{
               background:
                 "radial-gradient(closest-side, var(--accent), transparent)",
