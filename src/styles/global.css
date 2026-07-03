@@ -18,19 +18,20 @@
 }
 
 :root {
-  --background: oklch(0.2046 0 0);
-  --foreground: oklch(0.9219 0 0);
+  --background: hsl(0 0% 9%);
+  --foreground: hsl(0 0% 90%);
+  --muted: hsl(0 0% 75%);
 
-  --primary: oklch(0.2 0 0);
-  --primary-foreground: oklch(0 0 0);
-  --secondary: oklch(0.24 0 0);
+  --primary: hsl(0 0% 8.6%);
+  --primary-foreground: hsl(0 0% 0%);
+  --secondary: hsl(0 0% 12.2%);
 
-  --accent: oklch(0.55 0.2 31.33);
-  --accent-foreground: oklch(1 0 0);
-  --muted-foreground: oklch(0.7155 0 0);
-  --border: oklch(0.3715 0 0);
-  --input: oklch(0.3715 0 0);
-  --ring: oklch(0.7686 0.1647 70.0804);
+  --accent: hsl(355 52% 46%);
+  --accent-foreground: hsl(0 0% 100%);
+  --muted-foreground: hsl(0 0% 63.9%);
+  --border: hsl(0 0% 25.1%);
+  --input: hsl(0 0% 25.1%);
+  --ring: hsl(37.7 92.1% 50.2%);
 
   --font-sans: "Inter Variable", sans-serif;
 
@@ -44,6 +45,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);

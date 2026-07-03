@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactSectionTwoSimple } from "@/components/ContactSectionTwoSimple";
 import { Footer } from "@/components/Footer";
-import { HeroTwo } from "@/components/HeroTwo";
+import { Hero } from "@/components/Hero";
 import { ServicesSectionTwo } from "@/components/ServicesSectionTwo";
 import { BUSINESS_NAME } from "@/lib/consts";
 
@@ -49,7 +49,7 @@ function Home() {
           <div className="absolute right-0 top-0 h-72 w-72 rounded-[45%] bg-accent/30 blur-[120px]" />
         </div>
 
-        <HeroTwo />
+        <Hero />
         <ServicesSectionTwo />
         <ContactSectionTwoSimple />
       </main>

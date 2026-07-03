@@ -1,4 +1,5 @@
 import { CTALink } from "@/components/CTALink";
+import { Logo } from "@/components/Logo";
 import { BUSINESS_NAME, SECTION_IDS } from "@/lib/consts";
 import house1 from "@/assets/img/house1.jpg?format=avif&as=metadata";
 import house2 from "@/assets/img/house2.jpg?format=avif&as=metadata";
@@ -14,46 +15,7 @@ const navLinks = [
   { label: "Get a quote", href: `#${SECTION_IDS.CONTACT}` },
 ];
 
-function CertificationRibbon() {
-  return (
-    <div className="flex flex-col items-center justify-center gap-24 bg-zinc-800/30 px-6 py-8 backdrop-blur-sm sm:flex-row sm:gap-20 lg:px-8">
-      {/* OSHA Group */}
-      <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
-        <img
-          src="/img/osha.png"
-          alt="OSHA"
-          className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
-        />
-        <div className="flex flex-col">
-          <span className="text-xl font-semibold text-white">
-            OSHA Certified
-          </span>
-          <span className="text-xs text-gray-400">
-            Comprehensive Safety & Compliance Standards
-          </span>
-        </div>
-      </div>
-      {/* IWCA Group */}
-      <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
-        <img
-          src="/img/iwca.png"
-          alt="IWCA"
-          className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
-        />
-        <div className="flex flex-col">
-          <span className="text-xl font-semibold text-white">
-            Member of IWCA
-          </span>
-          <span className="text-xs text-gray-400">
-            International Window Cleaning Association
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function HeroTwo() {
+export function Hero() {
   return (
     <div className="">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -61,13 +23,12 @@ export function HeroTwo() {
           aria-label="Global"
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         >
-          <div className="flex items-center gap-2">
-            <div>
-              <span className="text-base font-semibold text-gray-900 dark:text-white">
-                {BUSINESS_NAME}
-              </span>
-            </div>
-          </div>
+          <a href="#" className="flex items-center gap-3">
+            <Logo className="h-6 w-auto" />
+            <span className="text-xl hidden sm:block font-semibold tracking-wide">
+              {BUSINESS_NAME}
+            </span>
+          </a>
           <div className="flex items-center gap-6">
             <div className="flex gap-6">
               {navLinks.map((link) => (
@@ -131,9 +92,9 @@ export function HeroTwo() {
               <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
                 <div className="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
                   <h1 className="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl dark:text-white">
-                    Michiana's trusted cleaning partner
+                    Michiana's post-build finishing experts
                   </h1>
-                  <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none dark:text-gray-400">
+                  <p className="mt-8 text-lg sm:max-w-md sm:text-xl/8 lg:max-w-none text-muted">
                     Specialized cleaning services for new build properties
                     across Michiana. From construction cleanup to move-in ready
                     perfection, we deliver immaculate results for residential
@@ -209,6 +170,41 @@ export function HeroTwo() {
           </div>
         </div>
       </main>
+    </div>
+  );
+}
+
+function CertificationRibbon() {
+  return (
+    <div className="flex flex-col items-center justify-center gap-24 bg-zinc-800/30 px-6 py-8 backdrop-blur-sm sm:flex-row sm:gap-20 lg:px-8">
+      {/* OSHA Group */}
+      <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
+        <img
+          src="/img/osha.png"
+          alt="OSHA"
+          className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
+        />
+        <div className="flex flex-col">
+          <span className="text-xl font-semibold">OSHA Certified</span>
+          <span className="text-xs text-muted">
+            Comprehensive Safety & Compliance Standards
+          </span>
+        </div>
+      </div>
+      {/* IWCA Group */}
+      <div className="flex w-full max-w-sm items-center gap-3 sm:w-auto sm:max-w-none">
+        <img
+          src="/img/iwca.png"
+          alt="IWCA"
+          className="h-20 w-20 shrink-0 object-contain brightness-0 invert"
+        />
+        <div className="flex flex-col">
+          <span className="text-xl font-semibold">Member of IWCA</span>
+          <span className="text-xs text-muted">
+            International Window Cleaning Association
+          </span>
+        </div>
+      </div>
     </div>
   );
 }

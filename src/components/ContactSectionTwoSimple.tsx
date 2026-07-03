@@ -58,10 +58,10 @@ export function ContactSectionTwoSimple() {
 
       <div className="mx-auto max-w-7xl px-6 py-24 lg:py-48 lg:px-8">
         <div className="flex flex-col items-center justify-center text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+          <h2 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
             Get in touch
           </h2>
-          <p className="mt-6 max-w-2xl text-xl/8 text-gray-600 dark:text-gray-400">
+          <p className="mt-6 max-w-2xl text-xl/8 text-muted">
             Reach out directly to{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
@@ -71,19 +71,19 @@ export function ContactSectionTwoSimple() {
             </a>{" "}
             with inquiries or to discuss your cleaning needs.
           </p>
-          <dl className="mx-auto mt-10 w-content max-w-2xl space-y-4 text-left text-base/7 text-gray-600 dark:text-gray-300">
+          <dl className="mx-auto mt-10 w-content max-w-2xl space-y-4 text-left text-base/7 text-muted">
             <div className="flex items-center justify-start gap-x-4">
               <dt className="flex-none">
                 <span className="sr-only">Email</span>
                 <EnvelopeIcon
                   aria-hidden="true"
-                  className="h-7 w-6 text-gray-400"
+                  className="h-7 w-6 text-muted"
                 />
               </dt>
               <dd>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="hover:text-gray-900 dark:hover:text-white"
+                  className="dark:hover:text-foreground"
                 >
                   {CONTACT_EMAIL}
                 </a>

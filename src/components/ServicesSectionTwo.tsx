@@ -28,13 +28,13 @@ export function ServicesSectionTwo() {
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                 New build cleaning
               </p>
-              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+              <p className="mt-6 text-lg/8 text-muted">
                 Specializing in new build cleaning across Michiana, we bring
                 construction cleanup expertise and attention to detail that
                 ensures every surface shines. From initial debris removal to
                 final polish, we make properties move-in ready.
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+              <dl className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none text-muted">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-gray-900 dark:text-white">
